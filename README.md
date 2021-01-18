@@ -21,7 +21,9 @@
 
 ## 設計書
 ー 画面設計 https://drive.google.com/file/d/1e64gEUxlxh08pWd6v86aT5lm_OF2PYCI/view?usp=sharing
+<br>
 ー データベース設計 https://drive.google.com/file/d/1Os_jE1GTwdc6jUY945a5bcbrrWx-ED-w/view?usp=sharing
+<br>
 ー アプリケーション詳細設計 https://drive.google.com/file/d/1hT7zvX3BoYvmCIOdKwFPZwzDb8DKpKs1/view?usp=sharing
 
 ### 機能一覧
