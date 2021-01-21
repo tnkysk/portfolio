@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+      <h2>Edit</h2>
+
+        <% if @bagel.errors.any? %>
+          <div id="error_explanation">
+            <h4><%= @bagel.errors.count %>件のエラーが発生しました。</h4>
+            <ul>
+              <% @bagel.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <%= form_for(@bagel, url: bagel_path) do |f| %>
+          <b>Image</b>
+            <br>
+              <%= f.attachment_field :image %>
+            <br>
+          <b>Name</b>
+            <br>
+              <%= f.text_field :name, autofocus: true, size: "30x5" %>
+            <br>
+            <br>
+          <b>Store</b>
+            <br>
+              <%= f.text_field :store, size: "30x5" %>
+            <br>
+            <br>
+          <b>Price（税込)</b>
+            <br>
+              <%= f.text_field :price, size: "15x5" %>
+            <br>
+            <br>
+          <b>Introduction</b>
+            <br>
+              <%= f.text_area :introduction, size: "40x8" %>
+            <br>
+            <br>
+          <%= f.submit "更新", class:"btn btn-md btn-primary" %>
+        <% end %>
+
+    </div>
+  </div>
+</div>
+

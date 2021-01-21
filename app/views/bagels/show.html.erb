@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-3">
+      <%= render 'users/profile', user: @user, bagel: @bagel %>
+    </div>
+
+    <div class="col-md-6 col-md-offset-2">
+      <h2>Detail</h2>
+
+        <%= attachment_image_tag @bagel, :image, :fill, 540, 405, format: 'jpeg' %>
+          <br>
+          <br>
+        <b>Name：</b>
+            <%= @bagel.name %>
+          <br>
+          <br>
+        <b>Store：</b>
+            <%= @bagel.store %>
+          <br>
+          <br>
+        <b>Price（税込)：</b>
+            <%= @bagel.price %>円
+          <br>
+          <br>
+        <b>Introduction：</b>
+            <%= @bagel.introduction %>
+          <br>
+          <br>
+        <%= link_to "編集", edit_bagel_path(@bagel.id), class: 'btn btn-md btn-primary' %>
+        <%= link_to "削除", bagel_path(@bagel), method: :delete, "data-confirm" => "本当に消しますか?",  class: 'btn btn-danger'%>
+    </div>
+
+  </div>
+</div>

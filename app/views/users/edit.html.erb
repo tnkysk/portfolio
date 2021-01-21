@@ -5,7 +5,7 @@
 
         <% if @user.errors.any? %>
           <div id="error_explanation">
-            <h4><%= @user.errors.count %>件のerrorが発生しました。</h4>
+            <h4><%= @user.errors.count %>件のエラーが発生しました。</h4>
             <ul>
               <% @user.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
@@ -29,7 +29,7 @@
             <%= f.text_area :introduction, size: "50x5" %>
           <br>
           <br>
-          <%= f.submit "Update", class:"btn btn-md btn-default" %>
+          <%= f.submit "更新", class:"btn btn-md btn-primary" %>
         <% end %>
 
     </div>

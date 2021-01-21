@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-3">
+      <%= render 'users/profile', user: @user, bagel: @bagel %>
+    </div>
+
+    <div class="col-md-8">
+      <h2>Bagels</h2>
+
+      <% @bagels.each do |bagel| %>
+        <div class="col-md-2 col-md-offset-1">
+          <%= attachment_image_tag bagel, :image, :fill, 150, 100 %>
+          <br>
+          <%= link_to bagel.name, bagel_path(bagel) %>
+          <br>
+          <br>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
