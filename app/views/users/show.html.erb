@@ -13,7 +13,11 @@
           <%= attachment_image_tag bagel, :image, :fill, 200, 150 %>
           <br>
           <%= link_to bagel.name, bagel_path(bagel.id) %>
-          <p>【<%= bagel.store %>】</p>
+          <br>
+          【<%= bagel.store %>】
+          <br>
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+          <%= bagel.favorites.count %>
           <br>
           <br>
         </div>
