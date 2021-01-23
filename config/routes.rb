@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   root :to => 'users#top'
-  resources :bagels
+  resources :bagels do
+  	resource :favorites, only: [:create, :destroy]
+  end
 end

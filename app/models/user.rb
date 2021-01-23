@@ -7,6 +7,7 @@ class User < ApplicationRecord
   attachment :profile_image
 
   has_many :bagels, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   validates :name, presence: true
   validates :introduction, length: { maximum: 50 }
