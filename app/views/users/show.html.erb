@@ -1,7 +1,24 @@
 <div class="container">
   <div class="row">
+
     <div class="col-md-3">
-      <%= render 'users/profile', user: @user %>
+      <%= render 'users/profile', user: @user, bagel: @bagel %>
     </div>
+
+    <div class="col-md-8">
+      <h2>Bagels</h2>
+
+      <% @user.bagels.each do |bagel| %>
+        <div class="col-md-3 col-md-offset-1">
+          <%= attachment_image_tag bagel, :image, :fill, 200, 150 %>
+          <br>
+          <%= link_to bagel.name, bagel_path(bagel.id) %>
+          <p>【<%= bagel.store %>】</p>
+          <br>
+          <br>
+        </div>
+      <% end %>
+    </div>
+
   </div>
 </div>

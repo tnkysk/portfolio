@@ -4,12 +4,76 @@
     <title>Portfolio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">BAGELS</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to user_path(current_user.id), class: "btn btn-md btn-dark" do%>
+                <i class="glyphicon glyphicon-home"></i>
+                My page
+              <% end %>
+            </li>
+            <li>
+              <%= link_to users_path, class: "btn btn-md btn-dark" do%>
+                <i class="glyphicon glyphicon-user"></i>
+                Users
+              <% end %>
+            </li>
+            <li>
+              <%= link_to bagels_path, class: "btn btn-md btn-dark" do%>
+                <i class="glyphicon glyphicon-record"></i>
+                Bagels
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_bagel_path, class: "btn btn-md btn-dark" do%>
+                <i class="glyphicon glyphicon-pencil"></i>
+                New post
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-md btn-dark" do%>
+                <i class="glyphicon glyphicon-log-out"></i>
+                Logout
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to root_path, class: "btn btn-md btn-dark" do%>
+                <i class="glyphicon glyphicon-home"></i>
+                Home
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_registration_path, class: "btn btn-md btn-dark" do%>
+                <i class="glyphicon glyphicon-edit"></i>
+                Sign up
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_session_path, class: "btn btn-md btn-dark" do%>
+                <i class="glyphicon glyphicon-log-in"></i>
+                Login
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
