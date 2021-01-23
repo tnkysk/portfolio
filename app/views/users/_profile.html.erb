@@ -1,0 +1,23 @@
+<table class="table">
+  <h2>User info</h2>
+  <!-- ここから profile_image -->
+  <tr>
+    <%= attachment_image_tag user, :profile_image,　format: 'jpeg', fallback: "no_image.jpg", size: "250x250" ,class: "img-circle" %>
+  </tr>
+  <!-- ここからname -->
+  <tr>
+    <th><p>Name</p></th>
+    <td><%= user.name %></td>
+  </tr>
+  <!-- ここからintroduction -->
+  <tr>
+    <th><p>Introduction</p></th>
+    <td><%= user.introduction %></td>
+  </tr>
+</table>
+
+<%= link_to edit_user_path(user.id) do %>
+  <span class="btn btn-default btn-block">
+    <span class="glyphicon glyphicon-wrench"></span>
+  </span>
+<% end %>
