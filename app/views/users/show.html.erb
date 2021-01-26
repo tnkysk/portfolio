@@ -10,7 +10,7 @@
 
       <% @user.bagels.each do |bagel| %>
         <div class="col-md-3 col-md-offset-1">
-          <%= attachment_image_tag bagel, :image, :fill, 200, 150 %>
+          <%= attachment_image_tag bagel, :image.to_s, :fill, 200, 150 %>
           <br>
           <%= link_to bagel.name, bagel_path(bagel.id) %>
           <br>

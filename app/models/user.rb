@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :bagels, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  mount_uploader :profile_image, ImageUploader
+
   validates :name, presence: true
   validates :introduction, length: { maximum: 50 }
 
