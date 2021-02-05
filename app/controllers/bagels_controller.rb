@@ -24,6 +24,7 @@ class BagelsController < ApplicationController
   def show
   	@bagel = Bagel.find(params[:id])
   	@user = @bagel.user
+    @post_comment = PostComment.new
   end
 
   def edit

@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :bagels, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :post_comments, dependent: :destroy
 
   validates :name, presence: true
   validates :introduction, length: { maximum: 50 }
